@@ -1,0 +1,482 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>
+      错误监控之 Sentry
+    </title>
+    <meta name="author" content="Kieran" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+
+  <body class="impress-not-supported">
+    <div class="fallback-message">
+      <p>
+        Your browser <b>doesn't support the features required</b> by impress.js,
+        so you are presented with a simplified version of this presentation.
+      </p>
+      <p>
+        For the best experience please use the latest <b>Chrome</b>,
+        <b>Safari</b> or <b>Firefox</b> browser.
+      </p>
+    </div>
+
+    <div id="impress">
+      <div
+        id="title"
+        class="step"
+        data-x="-4000"
+        data-y="0"
+        data-z="1000"
+        data-scale="20"
+      >
+        <h2 style="text-align: center; font-size: 80px;">错误监控之 Sentry</h2>
+        <p style="text-align: center;" class="footnote">
+          <sup>From Kieran</sup>
+        </p>
+      </div>
+
+      <div
+        id="resolve"
+        class="step"
+        data-x="-3650"
+        data-y="-2400"
+        data-scale="2"
+        data-rotate="90"
+      >
+        <p><strong style="font-size: 60px;">想解决的问题</strong><br /></p>
+      </div>
+
+      <div
+        id="resolve-detail"
+        class="step"
+        data-x="-6000"
+        data-y="-2000"
+        data-rotate="180"
+        data-scale="1"
+      >
+        <p style="font-size: 30px;">
+          用户说，出问题了？<br />
+          错误日志信息这么少，怎么查？<br />
+          线上出问题了，而我们等到别人报告才发现... <br />
+          为时已晚...<br />
+          <img src="img/1.png" width="400px" style="margin-top: 30px;" />
+        </p>
+      </div>
+
+      <div
+        id="sentry"
+        class="step"
+        data-x="-6000"
+        data-y="-3000"
+        data-scale="10"
+        data-rotate-x="-90"
+        data-rotate-y="10"
+      >
+        <h1 style="font-size: 80px;">Sentry</h1>
+      </div>
+
+      <div
+        id="what-is-sentry"
+        class="step"
+        data-x="-3650"
+        data-y="2400"
+        data-scale="1"
+        data-rotate="200"
+      >
+        <p><strong style="font-size: 60px;">什么是 Sentry ？</strong><br /></p>
+      </div>
+
+      <div
+        id="introduce"
+        class="step"
+        data-x="850"
+        data-y="3000"
+        data-rotate="90"
+        data-scale="5"
+      >
+        <h3>官方解释：</h3>
+        <p>
+          Sentry
+          是一个开源错误追踪系统，可帮助开发人员实时监控和修复崩溃。不断迭代，提高效率，改善用户体验。
+        </p>
+      </div>
+
+      <div
+        id="big"
+        class="step"
+        data-x="3500"
+        data-y="2100"
+        data-rotate="180"
+        data-scale="6"
+      >
+        <p><b>why</b> <span class="thoughts">Sentry?</span></p>
+      </div>
+
+      <div
+        id="why-detail"
+        class="step"
+        data-x="3600"
+        data-y="-2000"
+        data-z="0"
+        data-rotate="270"
+        data-scale="6"
+      >
+        <p>
+          客户端侵入性小<br />
+          包含详细的错误信息<br />
+          告警通知功能<br />
+          拓展功能强<br />
+          支持多种编程语言<br />
+        </p>
+      </div>
+
+      <div
+        id="tiny"
+        class="step"
+        data-x="2825"
+        data-y="2325"
+        data-z="-3000"
+        data-rotate="300"
+        data-scale="1"
+      >
+        <p>举个 <b>栗子</b></p>
+      </div>
+
+      <div
+        id="imagination"
+        class="step"
+        data-x="8700"
+        data-y="-300"
+        data-scale="2"
+      >
+        React DEMO<br />
+        <p>
+          <img src="img/2.png" width="" />
+        </p>
+      </div>
+
+      <div
+        id="source"
+        class="step"
+        data-x="8300"
+        data-y="2200"
+        data-rotate="20"
+        data-scale="2"
+      >
+        <p>What is Release ?</p>
+
+        <img src="img/3.png" />
+      </div>
+
+      <div
+        id="source-map"
+        class="step"
+        data-x="13300"
+        data-y="2200"
+        data-rotate="-50"
+        data-scale="5"
+      >
+        <h1 style="font-size: 60px; font-weight: bold; margin-bottom: 30px;">
+          Source Map 该咋办 ?
+        </h1>
+        <p>1. sentry-cli 手动上传</p>
+        <p>2. webpack 插件自动上传</p>
+      </div>
+
+      <div
+        id="webpack-source-map"
+        class="step"
+        data-x="10300"
+        data-y="5200"
+        data-rotate="-120"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          webpack 插件自动上传
+        </p>
+        <p style="font-size: 28px; margin-bottom: 20px;">
+          推荐 webpack-sentry-plugin，而不是 @sentry/webpack-plugin
+        </p>
+        <img src="img/4.png" alt="" />
+      </div>
+
+      <div
+        id="release-map"
+        class="step"
+        data-x="8300"
+        data-y="6200"
+        data-rotate="0"
+        data-scale="1"
+      >
+        <!-- <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          webpack 插件自动上传
+        </p> -->
+        <img src="img/5.png" width="1000px" />
+      </div>
+
+      <div
+        id="simple-error"
+        class="step"
+        data-x="12300"
+        data-y="-800"
+        data-rotate="-90"
+        data-scale="2"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          Simple Error
+        </p>
+        <img src="img/6.png" width="1000px" />
+      </div>
+
+      <div
+        id="every-error"
+        class="step"
+        data-x="12000"
+        data-y="1300"
+        data-scale="3"
+        data-rotate-x="60"
+        data-rotate-7="60"
+      >
+        <p>所有错误都能被捕获了？</p>
+      </div>
+
+      <div
+        id="promise-error"
+        class="step"
+        data-x="7700"
+        data-y="-2800"
+        data-rotate="120"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          Promise Error
+        </p>
+        <img src="img/8.png" width="400px" />
+
+        <img src="img/7.png" width="1000px" />
+      </div>
+
+      <div
+        id="promise-error2"
+        class="step"
+        data-x="9700"
+        data-y="-2800"
+        data-rotate="180"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          unhandledrejection
+        </p>
+        <img src="img/9.png" width="600px" />
+
+        <img src="img/10.png" width="1000px" />
+      </div>
+
+      <div
+        id="promise-error3"
+        class="step"
+        data-x="11000"
+        data-y="-3800"
+        data-rotate="270"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          .catch()
+        </p>
+        <img src="img/11.png" width="1000px" />
+      </div>
+
+      <div
+        id="base"
+        class="step"
+        data-x="9000"
+        data-y="-4400"
+        data-rotate="180"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          原理
+        </p>
+        <img src="img/12.png" width="1000px" />
+      </div>
+
+      <div
+        id="jianrong"
+        class="step"
+        data-x="7000"
+        data-y="-4400"
+        data-rotate="-90"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          window.onerror 兼容性
+        </p>
+        <img src="img/13.png" width="700px" />
+      </div>
+
+      <div
+        id="other-errors"
+        class="step"
+        data-x="9500"
+        data-y="-1800"
+        data-rotate-x="180"
+        data-rotate-y="60"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          Tips:
+        </p>
+        <p>
+          Script error: JS 资源如果跨域了，需要在 script 标签上加
+          crossorigin="anonymous"，且 JS 资源服务器需要配置
+          Access-Controll-Allow-Origin，否则拿不到具体的错误信息
+        </p>
+      </div>
+
+      <div
+        id="python0"
+        class="step"
+        data-x="7500"
+        data-y="-1800"
+        data-rotate-x="80"
+        data-rotate-y="90"
+        data-scale="1"
+      >
+        <p style="font-size: 30px; font-weight: bold; margin-bottom: 20px;">
+          Flask:
+        </p>
+        <pre style="font-size: 20px;">
+sentry = Sentry(dsn='http://public_key:secret_key@example.com/1')
+
+def create_app():
+    app = Flask(__name__)
+    sentry.init_app(app)
+    return app
+        </pre>
+
+        <p style="font-size: 30px; font-weight: bold; margin-bottom: 20px;">
+          Django:
+        </p>
+        <pre style="font-size: 20px;">
+sentry = Sentry(dsn='http://public_key:secret_key@example.com/1')
+
+def create_app():
+    app = Flask(__name__)
+    sentry.init_app(app)
+    return app
+        </pre>
+      </div>
+
+      <div
+        id="python1"
+        class="step"
+        data-x="5000"
+        data-y="-3700"
+        data-rotate="-30"
+        data-scale="0.1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          Python Example
+        </p>
+        <img src="img/14.png" width="1000px" />
+      </div>
+
+      <div
+        id="python2"
+        class="step"
+        data-x="5600"
+        data-y="-5400"
+        data-rotate="90"
+        data-scale="1"
+      >
+        <p style="font-size: 50px; font-weight: bold; margin-bottom: 20px;">
+          Python Error
+        </p>
+        <img src="img/15.png" width="1000px" />
+      </div>
+
+      <div
+        id="zongjie"
+        class="step"
+        data-x="5500"
+        data-y="-1800"
+        data-rotate-x="80"
+        data-rotate-y="90"
+        data-scale="1"
+      >
+        <p style="font-size: 30px; font-weight: bold; margin-bottom: 20px;">
+          总结：
+        </p>
+        <pre style="font-size: 26px;">
+我们不可能在每处可能发生异常的代码为止都调用 Sentry，
+也不可能去修补过去的代码将 Sentry 一一植入。
+一个好的建议是，无论何时，你的程序都有统一的异常处理机制，
+最好是全局的。
+这样的话，你只要将 Sentry 写在全局的异常处理器即可。
+        </pre>
+      </div>
+
+      <div
+        id="one-more-thing"
+        class="step"
+        data-x="6000"
+        data-y="4000"
+        data-scale="1"
+      >
+        <p>one more thing...</p>
+      </div>
+
+      <div
+        id="popo"
+        class="step"
+        data-x="6200"
+        data-y="4300"
+        data-z="-100"
+        data-rotate-x="-40"
+        data-rotate-y="10"
+        data-scale="2"
+      >
+        <p>
+          <span class="have">消息提醒</span> <span class="you">怎能</span>
+          <span class="noticed">少了</span> <span class="its"> POPO</span>
+          <img src="img/16.png" width="700px" style="margin-top: 30px;" />
+        </p>
+      </div>
+
+      <div
+        id="overview"
+        class="step"
+        data-x="3000"
+        data-y="1500"
+        data-z="0"
+        data-scale="10"
+      ></div>
+    </div>
+
+    <div id="impress-toolbar"></div>
+
+    <div class="hint">
+      <p>
+        Use a spacebar or arrow keys to navigate. <br />
+        Press 'P' to launch speaker console.
+      </p>
+    </div>
+    <script>
+      if ('ontouchstart' in document.documentElement) {
+        document.querySelector('.hint').innerHTML =
+          '<p>Swipe left or right to navigate</p>';
+      }
+    </script>
+
+    <script src="js/impress.js"></script>
+    <script>
+      impress().init();
+    </script>
+  </body>
+</html>
